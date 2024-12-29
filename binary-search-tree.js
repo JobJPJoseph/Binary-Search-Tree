@@ -34,6 +34,22 @@ class BinarySearchTree {
 
   search(val) {
     // Your code here
+    // Do this iteratively
+    // Don't use useless pointers
+    let node = this.root;
+
+    while (node !== null) {
+      if (node.val === val) return true;
+
+      if (val < node.val) {
+        node = node.left;
+      } else {
+        node = node.right;
+      }
+
+    }
+
+    return false;
   }
 
 
