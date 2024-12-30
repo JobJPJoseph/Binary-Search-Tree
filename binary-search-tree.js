@@ -90,11 +90,36 @@ class BinarySearchTree {
     // Breadth First Traversal - Iterative
   breadthFirstTraversal() {
     // your code here
+    let numbers = [this.root]; // Queue
+
+    while (numbers.length) {
+      let node = numbers.shift();
+      console.log(node.val);
+
+      if (node.left) numbers.push(node.left);
+      if (node.right) numbers.push(node.right);
+
+    }
+
   }
 
   // Depth First Traversal - Iterative
   depthFirstTraversal() {
     // your code here
+    // We still need the original pointer pointing to the parent object
+    // We are using a stack here not a queue
+    let numbers = [this.root];
+
+    while (numbers.length) {
+      let node = numbers.pop();
+
+      console.log(node.val);
+      if (node.left) numbers.push(node.left);
+      if (node.right) numbers.push(node.right);
+    }
+
+
+
 }
 }
 
